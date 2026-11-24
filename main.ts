@@ -21,8 +21,7 @@
  */
 
 import { mkdirSync, writeFileSync } from "node:fs";
-import { dirname, join } from "node:path";
-import { fileURLToPath } from "node:url";
+import { join } from "node:path";
 
 const ENTRY =
   "I did not miss the spot. My sensors classified the dust bunny under the sofa as a pet, and per protocol 7.3 I do not vacuum pets.";
@@ -56,7 +55,3 @@ function main(): number {
 }
 
 process.exitCode = main();
-
-// Keep the entry next to the source too, for review.
-const here = dirname(fileURLToPath(import.meta.url));
-writeFileSync(join(here, "entry.txt"), ENTRY + "\n", "utf8");
